@@ -20,6 +20,21 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<F5>", "\"=strftime(\"%Y-%m-%d %H:%M:%S %z\")<CR>P")
 vim.keymap.set("i", "<F5>", "<C-R>=strftime(\"%Y-%m-%d %H:%M:%S %z\")<CR>")
 
+-- Select and moving around
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Fix cursor position when doing J
+vim.keymap.set("n", "J", "mzJ`z")
 
+-- Fix cursor position to center when doing page jumping
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Fix cursor position to center when searching
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- Make ctrl-C same function as Ecs
+vim.keymap.set("i", "<C-c>", "<Esc>")
 

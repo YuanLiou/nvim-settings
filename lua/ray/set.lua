@@ -1,7 +1,11 @@
 vim.g.mapleader = " "
 -- 自訂縮排 (Tab) 位元數
-local set = vim.opt -- set options
---
+local set = vim.opt 
+
+-- 設定字體樣式及大小。
+vim.o.guifont = "Monaco:h16"
+
+-- set options
 -- show divider at column 100
 set.colorcolumn = "100"
 
