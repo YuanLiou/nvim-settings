@@ -77,12 +77,3 @@ set.foldmethod = "indent"
 set.foldcolumn = "1"
 set.foldlevel =5
 
-
-
-
-
-
-
-
-
-
