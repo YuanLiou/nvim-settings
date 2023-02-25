@@ -38,3 +38,5 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Make ctrl-C same function as Ecs
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+-- Quick change selected text
+vim.keymap.set("n", "<F6>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
