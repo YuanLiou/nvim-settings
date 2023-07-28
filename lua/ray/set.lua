@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local set = vim.opt 
 
 -- 設定字體樣式及大小。
-vim.o.guifont = "Monaco:h16"
+vim.o.guifont = "IntoneMono Nerd Font Mono:h16"
 
 -- set options
 -- show divider at column 100
