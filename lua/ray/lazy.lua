@@ -15,7 +15,7 @@ vim.g.mapleader = " "
 
 local plugins = {
     {
-        'nvim-telescope/telescope.nvim', version = '0.1.1',
+        'nvim-telescope/telescope.nvim',
         -- or                            , branch = '0.1.x',
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
@@ -34,6 +34,7 @@ local plugins = {
     'tpope/vim-fugitive',
     'easymotion/vim-easymotion',
     'gelguy/wilder.nvim',
+    'nvim-tree/nvim-tree.lua',
 
     -- LSP Zero
     {
