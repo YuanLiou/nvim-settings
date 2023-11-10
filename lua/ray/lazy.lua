@@ -33,6 +33,7 @@ local plugins = {
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'easymotion/vim-easymotion',
+    'gelguy/wilder.nvim',
 
     -- LSP Zero
     {
