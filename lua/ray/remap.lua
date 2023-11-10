@@ -40,3 +40,9 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Quick change selected text
 vim.keymap.set("n", "<F6>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Split Screen
+vim.keymap.set("n", "<leader>wv", "<C-w>v")
+vim.keymap.set("n", "<leader>ws", "<C-w>s")
+vim.keymap.set("n", "<leader>wc", "<C-w>c")
+vim.keymap.set("n", "<leader>ww", "<C-w>w")
