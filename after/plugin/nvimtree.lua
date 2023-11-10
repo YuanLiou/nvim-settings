@@ -21,3 +21,6 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+-- Remaps
+vim.keymap.set("n", "<leader>1", ":NvimTreeToggle<CR>")
