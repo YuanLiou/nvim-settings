@@ -35,6 +35,7 @@ local plugins = {
     'easymotion/vim-easymotion',
     'gelguy/wilder.nvim',
     'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-web-devicons',
 
     -- LSP Zero
     {
