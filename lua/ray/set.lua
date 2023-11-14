@@ -47,6 +47,9 @@ set.showmatch = true
 --  高亮當前行 (水平)。
 set.cursorline = true
 
+--  高亮當前行 (垂直)。
+set.cursorcolumn = true
+
 -- 自動縮排：啟用自動縮排以後，在貼上剪貼簿的資料時排版可能會亂掉，這時可以手動切換至貼上模式 :set paste 再進行貼上。
 set.ai = true
 
