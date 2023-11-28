@@ -80,3 +80,5 @@ set.foldmethod = "indent"
 set.foldcolumn = "1"
 set.foldlevel =5
 
+-- Python3
+vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
