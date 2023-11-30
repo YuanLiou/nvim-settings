@@ -7,7 +7,14 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 require('luasnip.loaders.from_vscode').lazy_load()
+
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 cmp.setup({
+  -- Preselect first completion item
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert',
+  },
   -- Configure completion sources
   sources = {
     {name = 'path'},
