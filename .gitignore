@@ -3,3 +3,8 @@
 plugin/packer_compiled.lua
 lazy-lock.json
 lua/.DS_Store
+.DS_Store
+after/.DS_Store
+
+## macOS files
+.DS_Store

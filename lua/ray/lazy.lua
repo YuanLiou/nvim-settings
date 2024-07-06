@@ -36,6 +36,8 @@ local plugins = {
     'gelguy/wilder.nvim',
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
+    'udalov/kotlin-vim',
+    'Exafunction/codeium.vim',
 
     -- LSP Zero
     {

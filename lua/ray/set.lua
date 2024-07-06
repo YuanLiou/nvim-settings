@@ -82,3 +82,5 @@ set.foldlevel =5
 
 -- Python3
 vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
+
+vim.opt.termguicolors = true

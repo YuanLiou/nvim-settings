@@ -84,8 +84,13 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
+local servers = {
+    kotlin_language_server = {},
+}
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
+  ensure_installed = vim.tbl_keys(servers),
   handlers = {
     lsp.default_setup,
   }
