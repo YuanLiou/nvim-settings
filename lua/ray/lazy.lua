@@ -16,7 +16,8 @@ vim.g.mapleader = " "
 local plugins = {
     {
         'nvim-telescope/telescope.nvim',
-        -- or                            , branch = '0.1.x',
+        -- or                            
+        -- , branch = '0.1.x',
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
 
@@ -37,7 +38,27 @@ local plugins = {
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
     'udalov/kotlin-vim',
-    'Exafunction/codeium.vim',
+    {
+        'Exafunction/codeium.vim',
+        event = 'BufEnter'
+    },
+    {
+        "christoomey/vim-tmux-navigator",
+        cmd = {
+            "TmuxNavigateLeft",
+            "TmuxNavigateDown",
+            "TmuxNavigateUp",
+            "TmuxNavigateRight",
+            "TmuxNavigatePrevious",
+        },
+        keys = {
+            { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+            { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+            { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+            { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+            { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+        },
+    },
 
     -- LSP Zero
     {
