@@ -39,10 +39,6 @@ local plugins = {
     'nvim-tree/nvim-web-devicons',
     'udalov/kotlin-vim',
     {
-        'Exafunction/codeium.vim',
-        event = 'BufEnter'
-    },
-    {
         "christoomey/vim-tmux-navigator",
         cmd = {
             "TmuxNavigateLeft",
