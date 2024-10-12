@@ -15,8 +15,20 @@ keymap.set("n", "<leader>bN", ":enew<CR>")
 keymap.set("n", "<leader>bk", ":bd<CR>")
 --  force close a buffer
 keymap.set("n", "<leader>bK", ":bd!<CR>")
---  Paste without cleanup paste buffer (paste register
-keymap.set("x", "<leader>p", "\"_dP")
+
+-- Copy and paste
+keymap.set("n", "<leader><leader>y", '"*y')
+keymap.set("n", "<leader><leader>p", '"*p')
+keymap.set("n", "<leader>y", '"+y')
+keymap.set("n", "<leader>p", '"+p')
+
+keymap.set("v", "<leader><leader>y", '"*y')
+keymap.set("v", "<leader><leader>p", '"*p')
+keymap.set("v", "<leader>y", '"+y')
+keymap.set("v", "<leader>p", '"+p')
+
+-- Paste without cleanup paste buffer (paste register
+keymap.set("x", "<leader>P", '"_dP')
 
 -- insert current date time
 -- e.g. 2021-11-17 19:19:26 +0800
