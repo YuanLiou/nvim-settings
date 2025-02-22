@@ -1,4 +1,4 @@
 require("ray")
 
---vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
