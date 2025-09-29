@@ -29,8 +29,8 @@ local plugins = {
     },
 
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+    'github/copilot.vim',
     'nvim-treesitter/playground',
-    'ThePrimeagen/harpoon',
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'easymotion/vim-easymotion',
