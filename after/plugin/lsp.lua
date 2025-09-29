@@ -55,7 +55,8 @@ cmp.setup({
 
 -- Configure the lua language server
 local lua_opts = lsp.nvim_lua_ls()
-require('lspconfig').lua_ls.setup(lua_opts)
+vim.lsp.config['lua_ls'] = lua_opts
+vim.lsp.enable('lua_ls')
 
 -- Configure diagnostics
 lsp.set_sign_icons({
@@ -86,13 +87,16 @@ end)
 
 local servers = {
     kotlin_language_server = {},
+    lua_ls = {},
 }
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = vim.tbl_keys(servers),
   handlers = {
-    lsp.default_setup,
+    function(server_name)
+      vim.lsp.enable(server_name)
+    end,
   }
 })
 
