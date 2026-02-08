@@ -1,6 +1,19 @@
-local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+local lsp_zero = require('lsp-zero')
+
+-- lsp_attach is where you enable features that only work
+-- if there is a language server active in the file
+local lsp_attach = function(client, bufnr)
+  local opts = {buffer = bufnr}
+
+  lsp_zero.default_keymaps(opts)
+end
+
+lsp_zero.extend_lspconfig({
+  sign_text = true,
+  lsp_attach = lsp_attach,
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
 
 -- Configure autocomplete mappings
 local cmp = require('cmp')
@@ -53,19 +66,7 @@ cmp.setup({
   }),
 })
 
--- Configure the lua language server
-local lua_opts = lsp.nvim_lua_ls()
-vim.lsp.config['lua_ls'] = lua_opts
-vim.lsp.enable('lua_ls')
-
 -- Configure diagnostics
-lsp.set_sign_icons({
-  error = '✘',
-  warn = '▲',
-  hint = '⚑',
-  info = ''
-})
-
 vim.diagnostic.config({
   virtual_text = false,
   severity_sort = true,
@@ -76,18 +77,27 @@ vim.diagnostic.config({
     header = '',
     prefix = '',
   },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '✘',
+      [vim.diagnostic.severity.WARN] = '▲',
+      [vim.diagnostic.severity.HINT] = '⚑',
+      [vim.diagnostic.severity.INFO] = '',
+    },
+  },
 })
-
--- Enable automatic setup of language servers
-lsp.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp.default_keymaps({buffer = bufnr})
-end)
 
 local servers = {
     kotlin_language_server = {},
-    lua_ls = {},
+    lua_ls = {
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
+                }
+            }
+        }
+    }
 }
 
 require('mason').setup({})
@@ -95,11 +105,7 @@ require('mason-lspconfig').setup({
   ensure_installed = vim.tbl_keys(servers),
   handlers = {
     function(server_name)
-      vim.lsp.enable(server_name)
+      require('lspconfig')[server_name].setup(servers[server_name] or {})
     end,
   }
 })
-
--- Start lsp
-lsp.setup()
-

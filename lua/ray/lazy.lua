@@ -38,6 +38,7 @@ local plugins = {
     'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
     'udalov/kotlin-vim',
+    'github/copilot.vim',
     {
         "christoomey/vim-tmux-navigator",
         cmd = {
@@ -59,7 +60,7 @@ local plugins = {
     -- LSP Zero
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        branch = 'v4.x',
         dependencies = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required

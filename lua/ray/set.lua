@@ -84,3 +84,6 @@ set.foldlevel =5
 vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
 
 vim.opt.termguicolors = true
+
+-- Copilot
+vim.g.copilot_no_tab_map = true

@@ -90,3 +90,7 @@ keymap.set("n", "<s-tab>", ":tabprevious<Return>", opts)
 keymap.set("n", "<leader>j", function()
     vim.diagnostic.goto_next()
 end)
+
+-- Copilot
+-- Accept suggestion with Ctrl+J
+keymap.set("i", "<C-J>", 'copilot#Accept()', { silent = true, expr = true, noremap = false, replace_keycodes = false})
