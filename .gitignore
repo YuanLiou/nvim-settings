@@ -1,7 +1,7 @@
 ## Compiled files
 
 plugin/packer_compiled.lua
-lazy-lock.json
+nvim.log
 lua/.DS_Store
 .DS_Store
 after/.DS_Store
